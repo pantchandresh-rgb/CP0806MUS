@@ -1,0 +1,145 @@
+:root {
+    --dark-blue: #0d1b2a;
+    --darker-blue: #0a111a;
+    --orange: #f77f00;
+    --light-gray: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: var(--dark-blue);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #fff !important;
+}
+
+.navbar-brand span { color: var(--orange); }
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin-left: 1.5rem;
+}
+
+.nav-link:hover { color: var(--orange) !important; }
+
+/* Hero Section */
+.hero-section {
+    height: 90vh;
+    background: linear-gradient(rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.8)), 
+                url('https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-orange {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    transition: transform 0.3s;
+}
+
+.btn-orange:hover {
+    background-color: #d66d00;
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* Swiper */
+.swiper {
+    width: 100%;
+    height: 400px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Musician Cards */
+.musician-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.musician-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card-img-container {
+    overflow: hidden;
+    height: 250px;
+}
+
+.card-img-top {
+    transition: transform 0.5s ease;
+    height: 100%;
+    object-fit: cover;
+}
+
+.musician-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.text-orange { color: var(--orange); }
+
+/* Registration Form */
+.bg-dark-blue { background-color: var(--dark-blue); }
+.bg-darker { background-color: var(--darker-blue); }
+
+.form-control, .form-select {
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+/* Section titles */
+.section-title {
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background: var(--orange);
+    margin: 10px auto;
+}
+
+.step-card {
+    padding: 2rem;
+    transition: 0.3s;
+}
+
+.step-card:hover { transform: scale(1.05); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2.5rem; }
+    .navbar { background: var(--dark-blue); }
+}
