@@ -1,44 +1,41 @@
-// Initialization
-AOS.init({ once: true });
+// AOS Initialization
+AOS.init();
 
+// Swiper Initialization
 const swiper = new Swiper(".mySwiper", {
     loop: true,
-    autoplay: { delay: 4000 },
-    pagination: { el: ".swiper-pagination" },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    autoplay: { delay: 3500 },
+    pagination: { el: ".swiper-pagination", clickable: true },
 });
 
-// Indian Artist Database
-const artists = [
-    { name: "Pandit Rahul Sharma", genre: "Classical", city: "Delhi", price: "15,000", rating: 5.0, img: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=500&q=80" },
-    { name: "The Desi Rockers", genre: "Rock", city: "Mumbai", price: "45,000", rating: 4.8, img: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?auto=format&fit=crop&w=500&q=80" },
-    { name: "DJ Armaan Bollywood", genre: "DJ", city: "Mumbai", price: "25,000", rating: 4.9, img: "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb1?auto=format&fit=crop&w=500&q=80" },
-    { name: "Sufi Mystics", genre: "Spiritual", city: "Delhi", price: "30,000", rating: 4.7, img: "https://images.unsplash.com/photo-1526218626217-dc65a29bb444?auto=format&fit=crop&w=500&q=80" },
-    { name: "Amrit Singh (Punjabi Solo)", genre: "Regional", city: "Kolkata", price: "18,000", rating: 4.6, img: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=500&q=80" },
-    { name: "Vikas Flute Magic", genre: "Instrumental", city: "Bangalore", price: "12,000", rating: 5.0, img: "https://images.unsplash.com/photo-1465821185615-934289210c39?auto=format&fit=crop&w=500&q=80" }
+// Database of Indian Artists
+const musicians = [
+    { name: "Siddharth Flute Medley", genre: "Classical", city: "Mumbai", price: "12,000", rating: 4.9, img: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=500&q=80" },
+    { name: "The Punjabi Rockstars", genre: "Rock", city: "Delhi-NCR", price: "65,000", rating: 4.8, img: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?auto=format&fit=crop&w=500&q=80" },
+    { name: "Sufi Soul Ensemble", genre: "Sufi", city: "Lucknow", price: "35,000", rating: 5.0, img: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=500&q=80" },
+    { name: "DJ Rahul Bollywood Mix", genre: "DJ", city: "Mumbai", price: "20,000", rating: 4.7, img: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500&q=80" },
+    { name: "Ananya Classical Vocals", genre: "Classical", city: "Bangalore", price: "15,000", rating: 4.9, img: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=500&q=80" },
+    { name: "The Fusion Project", genre: "Rock", city: "Bangalore", price: "50,000", rating: 4.6, img: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=500&q=80" }
 ];
 
-// Render Function
 const grid = document.getElementById('musicianGrid');
 
-function displayArtists(data) {
+function renderCards(data) {
     grid.innerHTML = '';
     data.forEach(artist => {
         grid.innerHTML += `
             <div class="col-md-4" data-aos="fade-up">
                 <div class="card musician-card shadow-sm h-100">
-                    <div class="card-img-wrapper">
-                        <img src="${artist.img}" alt="${artist.name}">
-                    </div>
+                    <img src="${artist.img}" class="card-img-top" alt="${artist.name}">
                     <div class="card-body">
-                        <h5 class="fw-bold mb-1">${artist.name}</h5>
-                        <p class="text-muted small mb-2"><i class="fas fa-music text-orange me-2"></i>${artist.genre}</p>
-                        <p class="text-muted small mb-2"><i class="fas fa-map-marker-alt text-orange me-2"></i>${artist.city}</p>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <span class="fw-bold text-dark">₹${artist.price}</span>
-                            <span class="badge bg-warning text-dark"><i class="fas fa-star me-1"></i>${artist.rating}</span>
+                        <h5 class="fw-bold">${artist.name}</h5>
+                        <p class="text-muted small mb-1"><i class="fas fa-music me-2"></i>${artist.genre}</p>
+                        <p class="text-muted small mb-3"><i class="fas fa-map-marker-alt me-2"></i>${artist.city}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-orange fw-bold">₹${artist.price}</span>
+                            <span class="badge bg-warning text-dark">★ ${artist.rating}</span>
                         </div>
-                        <button class="btn btn-dark w-100 mt-3 btn-sm">Contact Artist</button>
+                        <button class="btn btn-outline-dark w-100 mt-3 btn-sm">Contact Artist</button>
                     </div>
                 </div>
             </div>
@@ -46,33 +43,33 @@ function displayArtists(data) {
     });
 }
 
-// Filter Function
+// Filter Logic
 function filterMusicians() {
     const name = document.getElementById('nameFilter').value.toLowerCase();
     const genre = document.getElementById('genreFilter').value;
     const city = document.getElementById('cityFilter').value;
 
-    const filtered = artists.filter(a => {
-        return (a.name.toLowerCase().includes(name)) &&
-               (genre === "" || a.genre === genre) &&
-               (city === "" || a.city === city);
+    const filtered = musicians.filter(m => {
+        return (m.name.toLowerCase().includes(name)) &&
+               (genre === "" || m.genre === genre) &&
+               (city === "" || m.city === city);
     });
-    displayArtists(filtered);
+    renderCards(filtered);
 }
 
-// Navbar Shadow on Scroll
+// Navbar Shadow Effect
 window.onscroll = () => {
     const nav = document.getElementById('mainNav');
     if (window.scrollY > 50) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
 };
 
-// Form Submission
+// Form Handler
 document.getElementById('registrationForm').onsubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted Successfully!");
-    alert("Namaste! Your application has been received. Our team will review your profile and get back to you shortly.");
+    console.log("Success! Profile Submitted.");
+    alert("Namaste! Your registration for GigConnect India has been received. Our team will verify your talent shortly.");
 };
 
 // Initial Load
-displayArtists(artists);
+renderCards(musicians);
