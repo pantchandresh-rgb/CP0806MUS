@@ -1,152 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- ===================================================== -->
+<!-- HEAD SECTION -->
+<!-- ===================================================== -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GigConnect India | Book Musicians for Weddings & Events</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- WEBSITE TITLE -->
+<title>GigConnect India | Bringing Musicians Closer to Your Celebration</title>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- AOS ANIMATION -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<!-- SWIPER SLIDER -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+<!-- CUSTOM CSS -->
+<link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#">Gig<span>Connect</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#musicians">Find Artists</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#register">Register as Artist</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- ===================================================== -->
+<!-- NAVBAR -->
+<!-- ===================================================== -->
 
-    <header id="home" class="hero-section">
-        <div class="container text-center text-white" data-aos="zoom-out">
-            <h1 class="display-3 fw-bold">Live Music for Your <br><span class="text-orange">Desi Celebrations</span></h1>
-            <p class="lead mb-4">Book Sitarists, Sufi Singers, Bollywood Bands, and DJs across India.</p>
-            <div class="hero-btns">
-                <a href="#musicians" class="btn btn-orange btn-lg me-3">Browse Artists</a>
-                <a href="#register" class="btn btn-outline-light btn-lg">Join the Tribe</a>
-            </div>
-        </div>
-    </header>
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
 
-    <section class="slider-section py-5">
-        <div class="container">
-            <div class="swiper mySwiper shadow-lg">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=1200&q=80" alt="Indian Classical">
-                        <div class="slide-overlay"><span>Hindustani Classical</span></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1514525253361-bee8a19740c1?auto=format&fit=crop&w=1200&q=80" alt="Bollywood Band">
-                        <div class="slide-overlay"><span>High-Energy Fusion Bands</span></div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80" alt="Sufi Night">
-                        <div class="slide-overlay"><span>Soulful Sufi & Bhajan Nights</span></div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
+<div class="container">
 
-    <section id="musicians" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Verified Indian Artists</h2>
-                <div class="title-underline"></div>
-            </div>
+<a class="navbar-brand" href="#">
+<i class="fa-solid fa-music"></i> Gig<span>Connect</span>
+</a>
 
-            <div class="row g-3 mb-5 filter-container p-4 shadow-sm bg-white rounded-4" data-aos="fade-up">
-                <div class="col-md-4">
-                    <input type="text" id="nameFilter" class="form-control" placeholder="Search by name (e.g. Sharma)">
-                </div>
-                <div class="col-md-3">
-                    <select id="genreFilter" class="form-select">
-                        <option value="">All Styles</option>
-                        <option value="Classical">Classical (Sitar/Flute)</option>
-                        <option value="Sufi">Sufi & Semi-Classical</option>
-                        <option value="Rock">Indian Rock / Fusion</option>
-                        <option value="DJ">Bollywood DJ</option>
-                        <option value="Regional">Regional (Punjabi/Tamil)</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <select id="cityFilter" class="form-select">
-                        <option value="">All Cities</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Delhi-NCR">Delhi-NCR</option>
-                        <option value="Bangalore">Bangalore</option>
-                        <option value="Lucknow">Lucknow</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-dark w-100" onclick="filterMusicians()">Search</button>
-                </div>
-            </div>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-            <div class="row g-4" id="musicianGrid">
-                </div>
-        </div>
-    </section>
+<div class="collapse navbar-collapse" id="navbarNav">
 
-    <section id="register" class="py-5 bg-navy text-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center mb-4">
-                    <h2>Are you a Musician?</h2>
-                    <p>Register your profile and get bookings for Weddings, Corporate Events, and Festivals.</p>
-                </div>
-                <div class="col-md-10">
-                    <div class="card p-4 text-dark rounded-4 shadow">
-                        <form id="registrationForm">
-                            <div class="row g-3">
-                                <div class="col-md-6"><input type="text" class="form-control" placeholder="Full Name / Band Name" id="regName" required></div>
-                                <div class="col-md-6"><input type="email" class="form-control" placeholder="Email Address" id="regEmail" required></div>
-                                <div class="col-md-4">
-                                    <select class="form-select" id="regGenre">
-                                        <option>Classical</option>
-                                        <option>Sufi</option>
-                                        <option>Bollywood</option>
-                                        <option>Fusion Band</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4"><input type="text" class="form-control" placeholder="City (e.g. Mumbai)" id="regCity" required></div>
-                                <div class="col-md-4"><input type="number" class="form-control" placeholder="Base Price (₹)" id="regPrice" required></div>
-                                <div class="col-12"><textarea class="form-control" placeholder="Tell us about your musical journey..." id="regBio" rows="3"></textarea></div>
-                                <div class="col-12 text-center"><button class="btn btn-orange px-5">Submit Profile</button></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<ul class="navbar-nav ms-auto">
 
-    <footer class="py-5 bg-black text-white">
-        <div class="container text-center">
-            <h3>Gig<span>Connect</span></h3>
-            <p>Bringing the rhythm of India to your stage.</p>
-            <hr class="my-4 border-secondary">
-            <p class="small text-muted mb-0">&copy; 2026 GigConnect India. All Rights Reserved.</p>
-        </div>
-    </footer>
+<li class="nav-item">
+<a class="nav-link" href="#home">Home</a>
+</li>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
+<li class="nav-item">
+<a class="nav-link" href="#musicians">Find Artists</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#how-it-works">How It Works</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#register">Register as Artist</a>
+</li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+
+
+<!-- ===================================================== -->
+<!-- HERO SECTION -->
+<!-- ===================================================== -->
+
+<header id="home" class="hero-section">
+
+<div class="container text-center text-white" data-aos="zoom-out">
+
+<h1 class="display-3 fw-bold">
+
+Bringing Musicians Closer to <br>
+<span class="text-orange">Your Celebration</span>
+
+</h1>
+
+<p class="lead mb-4">
+
+Discover classical maestros, soulful singers, energetic bands and DJs Near You.
+
+</p>
+
+<div class="hero-btns">
+
+<a href="#musicians" class="btn btn-orange btn-lg me-3">
+Browse Artists
+</a>
+
+<a href="#register" class="btn btn-outline-light btn-lg">
+Join the Tribe
+</a>
+
+</div>
+
+</div>
+</header>
+
+
+
+<!-- ===================================================== -->
+<!-- TRUST SECTION -->
+<!-- ===================================================== -->
+
+<section class="py-5 bg-light">
+
+<div class="container text-center">
+
+<div class="row">
+
+<div class="col-md-4" data-aos="fade-up">
+<i class="fa fa-check-circle fa-3x text-success mb-3"></i>
+<h5>Verified Artists</h5>
+<p>All musicians are carefully reviewed before being listed.</p>
+</div>
+
+<div class="col-md-4" data-aos="fade-up">
+<i class="fa fa-calendar-check fa-3x text-primary mb-3"></i>
+<h5>Easy Booking</h5>
+<p>Browse artists and contact them directly for your event.</p>
+</div>
+
+<div class="col-md-4" data-aos="fade-up">
+<i class="fa fa-star fa-3x text-warning mb-3"></i>
+<h5>Trusted Platform</h5>
+<p>Hundreds of successful performances across India.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- IMAGE SLIDER SECTION -->
+<!-- ===================================================== -->
+
+<section class="slider-section py-5">
+
+<div class="container">
+
+<div class="swiper mySwiper shadow-lg">
+
+<div class="swiper-wrapper">
+
+
+<!-- CLASSICAL PERFORMANCE -->
+
+<div class="swiper-slide">
+<img src="https://images.unsplash.com/photo-1619983081563-430f63602796?auto=format&fit=crop&w=1200&q=80">
+<div class="slide-overlay"><span>Hindustani Classical Performances</span></div>
+</div>
+
+
+<!-- LIVE FUSION BAND -->
+
+<div class="swiper-slide">
+<img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80">
+<div class="slide-overlay"><span>High Energy Fusion Bands</span></div>
+</div>
+
+
+<!-- SUFI NIGHT -->
+
+<div class="swiper-slide">
+<img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80">
+<div class="slide-overlay"><span>Soulful Sufi & Bhajan Nights</span></div>
+</div>
+
+
+<!-- TABLA PERFORMANCE -->
+
+<div class="swiper-slide">
+<img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1200&q=80">
+<div class="slide-overlay"><span>Traditional Tabla & Instrumental Shows</span></div>
+</div>
+
+
+<!-- LIVE STAGE -->
+
+<div class="swiper-slide">
+<img src="https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=1200&q=80">
+<div class="slide-overlay"><span>Live Concert Experiences</span></div>
+</div>
+
+
+<!-- ONLINE STREAMING -->
+
+<div class="swiper-slide">
+<img src="https://images.unsplash.com/photo-1603575448369-6d86e3f48f9f?auto=format&fit=crop&w=1200&q=80">
+<div class="slide-overlay"><span>Virtual Music Streaming</span></div>
+</div>
+
+</div>
+
+<div class="swiper-pagination"></div>
+
+</div>
+</div>
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- ARTIST SEARCH -->
+<!-- ===================================================== -->
+
+<section id="musicians" class="py-5 bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+<h2 class="section-title">Verified Indian Artists</h2>
+<div class="title-underline"></div>
+</div>
+
+<div class="row g-3 mb-5 filter-container p-4 shadow-sm bg-white rounded-4">
+
+<div class="col-md-4">
+<input type="text" id="nameFilter" class="form-control" placeholder="Search by name">
+</div>
+
+<div class="col-md-3">
+<select id="genreFilter" class="form-select">
+<option value="">All Styles</option>
+<option value="Classical">Classical</option>
+<option value="Sufi">Sufi</option>
+<option value="Rock">Fusion</option>
+<option value="DJ">Bollywood DJ</option>
+</select>
+</div>
+
+<div class="col-md-3">
+<select id="cityFilter" class="form-select">
+<option value="">All Cities</option>
+<option>Delhi</option>
+<option>Ghaziabad</option>
+<option>Noida</option>
+<option>Gurugram</option>
+<option>Faridabad</option>
+<option>Haldwani</option>
+<option>Dehradun</option>
+<option>Lucknow</option>
+
+</select>
+</div>
+
+<div class="col-md-2">
+<button class="btn btn-dark w-100" onclick="filterMusicians()">Search</button>
+</div>
+
+</div>
+
+<div class="row g-4" id="musicianGrid"></div>
+
+</div>
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- HOW IT WORKS -->
+<!-- ===================================================== -->
+
+<section id="how-it-works" class="py-5">
+
+<div class="container text-center">
+
+<h2 class="mb-5">How GigConnect Works</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+<i class="fa fa-search fa-3x mb-3 text-orange"></i>
+<h5>Browse Artists</h5>
+<p>Explore musicians by genre, location, and style.</p>
+</div>
+
+<div class="col-md-4">
+<i class="fa fa-music fa-3x mb-3 text-orange"></i>
+<h5>Discover Music</h5>
+<p>Find the perfect sound for your celebration.</p>
+</div>
+
+<div class="col-md-4">
+<i class="fa fa-calendar fa-3x mb-3 text-orange"></i>
+<h5>Book Performance</h5>
+<p>Connect with artists and plan unforgettable events.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- ARTIST REGISTRATION -->
+<!-- ===================================================== -->
+
+<section id="register" class="py-5 bg-navy text-white">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-md-8 text-center mb-4">
+<h2>Are you a Musician?</h2>
+<p>Register your profile and get bookings for weddings and events.</p>
+</div>
+
+<div class="col-md-10">
+
+<div class="card p-4 text-dark rounded-4 shadow">
+
+<form id="registrationForm">
+
+<div class="row g-3">
+
+<div class="col-md-6">
+<input type="text" class="form-control" placeholder="Full Name / Band Name" id="regName" required>
+</div>
+
+<div class="col-md-6">
+<input type="email" class="form-control" placeholder="Email Address" id="regEmail" required>
+</div>
+
+<div class="col-md-4">
+<select class="form-select" id="regGenre">
+<option>Classical</option>
+<option>Sufi</option>
+<option>Bollywood</option>
+<option>Fusion Band</option>
+</select>
+</div>
+
+<div class="col-md-4">
+<input type="text" class="form-control" placeholder="City" id="regCity" required>
+</div>
+
+<div class="col-md-4">
+<input type="number" class="form-control" placeholder="Base Price ₹" id="regPrice" required>
+</div>
+
+<div class="col-12">
+<textarea class="form-control" placeholder="Tell us about your musical journey..." id="regBio"></textarea>
+</div>
+
+<div class="col-12 text-center">
+<button class="btn btn-orange px-5">Submit Profile</button>
+</div>
+
+</div>
+
+</form>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="py-5 bg-black text-white">
+
+<div class="container text-center">
+
+<h3>Gig<span>Connect</span></h3>
+
+<p>Connecting artists and celebrations through the power of music.</p>
+
+<hr class="my-4 border-secondary">
+
+<p class="small text-muted mb-0">
+© 2026 GigConnect India. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT LIBRARIES -->
+<!-- ===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
