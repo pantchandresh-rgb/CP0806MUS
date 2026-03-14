@@ -147,3 +147,14 @@ font-size:1rem;
 .title-underline { width: 60px; height: 4px; background: var(--orange); margin: 10px auto; }
 .bg-navy { background-color: var(--navy); }
 .text-orange { color: var(--orange); }
+
+/* Navbar Logo */
+
+.navbar-brand img{
+border-radius:6px;
+}
+
+.navbar-brand span{
+font-size:1.2rem;
+letter-spacing:0.5px;
+}
